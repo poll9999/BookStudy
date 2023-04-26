@@ -4,6 +4,27 @@
 
 추상화는 타입을 정의하고 분류하는 과정으로, 중요하지 않은 부분을 제거하여 서로 공통점을 일반화 함.
 
+
+Controller 에
+추상화 메소드 boolean askQuestion(String, String, String) 을 추가하여
+view.answer(getRole) 과 view.roleSpecialization 을 추가하여 반복되는 코드를 줄일 수 있었을 것 같다.
+
+EX)
+private static boolean askQuestion(String question, String yesOption, String noOption) throws IOException {
+   String answer = view.askQuestion(question, yesOption, noOption);
+   if (answer.equals(yesOption)) {
+      view.answer(getRole());
+      view.showSpecialization(getSpecialization());
+      return true;
+   } else if (answer.equals(noOption)) {
+      return false;
+   } else {
+      System.out.println("잘못된 입력입니다.");
+      System.exit(0);
+      return false;
+   }
+}
+
 ---
 <문제 생성>
 
