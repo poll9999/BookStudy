@@ -24,7 +24,6 @@ public class Controller {
     private static final Witness chef = new Witness(Chef.getEachRole());
     private static final Witness alice = new Witness(Alice.getEachRole());
     private static final HashMap<Witness, String> witnessList = new HashMap<>();
-    private static final HashMap<Witness, String> notTalkList = new HashMap<>();
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
